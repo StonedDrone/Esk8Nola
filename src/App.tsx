@@ -528,5 +528,608 @@ export default function App() {
     const unsubscribeGear = onSnapshot(
       collection(db, "gear_exchange"),
       (snapshot) => {
-        ×ß=âÚ$z{-®éÜj×fÇVS×¶vV$—FVÔæÖWÐÐ¢öä6†ævS×²†R’Óâ6WDvV$—FVÔæÖR†RçF&vWBçfÇVR—ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Ö&ÇVRÓSG&ç6—F–öâÖ6öÆ÷'2Æ6V†öÆFW#§FW‡BÕ²3335Ò Ð¢óàÐ¢Ç6VÆV7@Ð¢fÇVS×¶vV$—FVÕG—WÐÐ¢öä6†ævS×²†R’ÓàÐ¢6WDvV$—FVÕG—R€Ð¢RçF&vWBçfÇVR2vV$W†6†ævT—FVÕ²&—FVÕG—R%ÒÀÐ¢Ð¢ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Ö&ÇVRÓSG&ç6—F–öâÖ6öÆ÷'2 Ð¢àÐ¢Æ÷F–öâfÇVSÒ&&ö&B#ä&ö&CÂö÷F–öãàÐ¢Æ÷F–öâfÇVSÒ&†VÆÖWB#ä†VÆÖWCÂö÷F–öãàÐ¢Æ÷F–öâfÇVSÒ'B#åG3Âö÷F–öãàÐ¢Æ÷F–öâfÇVSÒ'FööÂ#åFööÃÂö÷F–öãàÐ¢Æ÷F–öâfÇVSÒ&÷F†W"#ä÷F†W#Âö÷F–öãàÐ¢Â÷6VÆV7CàÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ°Ð¢–b†vV$—FVÔæÖRçG&–Ò‚’’°Ð¢FDvV$—FVÒ†vV$—FVÔæÖRÂvV$—FVÕG—R“°Ð¢6WDvV$—FVÔæÖR‚""“°Ð¢ÐÐ¢×ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂ’ÓB&rÖ&ÇVRÓcFW‡B×v†—FR&÷VæFVB×†ÂföçBÖ&Æ6²WW&66RG&6¶–ær×F–v‡FW"†÷fW#¦&rÖ&ÇVRÓSG&ç6—F–öâÖ6öÆ÷'2 Ð¢àÐ¢Æ—7BvV"—FVÐÐ¢Âö'WGFöãàÐ¢ÂöF—càÐ¢ÂöF—càÐ Ð¢²ò¢vV"Æ—7B¢÷ÐÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚fÆW‚Ö6öÂ#àÐ¢ÄÆ&VÃä7F—fRÆ—7F–æw3ÂôÆ&VÃàÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚Ó÷fW&fÆ÷r×’ÖWFòÖ‚Ö‚Õ³3…Ò76R×’Ó2"Ó"7W7FöÒ×67&öÆÆ&"#àÐ¢¶vV$—FV×2æÆVæwF‚âò€Ð¢vV$—FV×2æÖ‚†—FVÒ’Óâ€Ð¢ÆF—`Ð¢¶W“×¶—FVÒæ–GÐÐ¢6Æ74æÖSÒ&&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3##%ÒÓB&÷VæFVBÓ'†ÂfÆW‚fÆW‚Ö6öÂ§W7F–g’Ö&WGvVVâvÓB Ð¢àÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚§W7F–g’Ö&WGvVVâ—FV×2×7F'B#àÐ¢ÆF—càÐ¢ÆF—b6Æ74æÖSÒ'FW‡B×‡2föçBÖ&Æ6²WW&66RFW‡B×v†—FR#àÐ¢¶—FVÒæ—FVÔæÖWÐÐ¢ÂöF—càÐ¢ÆF—b6Æ74æÖSÒ'FW‡BÕ³…ÒföçBÖ&öÆBWW&66RFW‡BÕ²3SSUÒ#àÐ¢¶—FVÒæ÷væW$æÖWÒ(
-"¶—FVÒæ—FVÕG—WÐÐ¢ÂöF—càÐ¢ÂöF—càÐ¢Ç7àÐ¢6Æ74æÖS×¶FW‡BÕ³‡…ÒföçBÖ&Æ6²WW&66RÓ‚Ó"&÷VæFVBÖÆrG¶—FVÒç7FGW2ÓÓÒ&f–Æ&ÆR"ò&&rÖw&VVâÓSó#FW‡BÖw&VVâÓS"¢&&r×&VBÓSó#FW‡B×&VBÓS'ÖÐÐ¢àÐ¢¶—FVÒç7FGW7ÐÐ¢Â÷7ãàÐ¢ÂöF—càÐ Ð¢ÆF—b6Æ74æÖSÒ&fÆW‚vÓ"#àÐ¢¶—FVÒç7FGW2ÓÓÒ&f–Æ&ÆR"ò€Ð¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ&÷'&÷tvV"†—FVÒæ–B—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’Ó"&rÕ²3##%Ò†÷fW#¦&rÖ&ÇVRÓcG&ç6—F–öâÖÆÂ&÷VæFVBÖÆrFW‡BÕ³—…ÒföçBÖ&Æ6²WW&66R Ð¢àÐ¢&÷'&÷pÐ¢Âö'WGFöãàÐ¢’¢€Ð¢†—FVÒæ&÷'&÷vW$–BÓÓÒ7W'&VçEW6W#òçV–BÇÀÐ¢—FVÒæ÷væW$–BÓÓÒ7W'&VçEW6W#òçV–B’bb€Ð¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ&WGW&ävV"†—FVÒæ–B—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’Ó"&rÕ²3##%Ò†÷fW#¦&rÖw&VVâÓcG&ç6—F–öâÖÆÂ&÷VæFVBÖÆrFW‡BÕ³—…ÒföçBÖ&Æ6²WW&66R Ð¢àÐ¢Ö&²2&WGW&æV@Ð¢Âö'WGFöãàÐ¢Ð¢—ÐÐ¢ÂöF—càÐ¢ÂöF—càÐ¢’Ð¢’¢€Ð¢ÆF—b6Æ74æÖSÒ'FW‡BÖ6VçFW"’ÓFW‡BÕ²3CCEÒFW‡BÕ³…ÒföçBÖ&Æ6²WW&66RG&6¶–ær×v–FW7B—FÆ–2#àÐ¢æòvV"–âF†RW†6†ævR–WBàÐ¢ÂöF—càÐ¢—ÐÐ¢ÂöF—càÐ¢ÂöF—càÐ¢ÂöF—càÐ¢ÂöF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢&ö&BÔ6†V6²÷fW&Æ’¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢·6†÷t&ö&D6†V6²bb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢×ÐÐ¢æ–ÖFS×·²÷6—G“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×rÖÖB÷fW&fÆ÷rÖ†–FFVâ&VÆF—fR Ð¢àÐ¢ÆF—b6Æ74æÖSÒ'Ó‚"ÓB#àÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#å6fWG’&÷Fö6öÃÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓG†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ó"—FÆ–2#àÐ¢$ô$BÔ4„T4²òðÐ¢Âöƒ#àÐ¢Ç6Æ74æÖSÒ'FW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3cceÒG&6¶–ærÕ³'…ÒÖ"Ó‚#àÐ¢fW&–f–6F–öâ&WV—&VBFòVævvRÖ÷F÷'0Ð¢Â÷àÐ Ð¢ÆF—b6Æ74æÖSÒ'76R×’Ó2Ö"Ó#àÐ¢´$ô$Eô4„T4´Ä•5BæÖ‚†—FVÒ’Óâ°Ð¢6öç7B–6öâÒ—FVÒæ–6öã°Ð¢6öç7B—46†V6¶VBÒ6†V6¶VD—FV×2æ†2†—FVÒæ–B“°Ð¢&WGW&â€Ð¢Æ'WGFöàÐ¢¶W“×¶—FVÒæ–GÐÐ¢öä6Æ–6³×²‚’ÓâFövvÆT6†V6¶Æ—7D—FVÒ†—FVÒæ–B—ÐÐ¢6Æ74æÖS×¶rÖgVÆÂÓR&÷VæFVBÓ'†ÂfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö&WGvVVâG&ç6—F–öâÖÆÂ&÷&FW"G¶—46†V6¶VBò&&rÕ²4dcd#ÒóR&÷&FW"Õ²4dcd#Òó#FW‡B×v†—FR"¢&&rÕ²3SSUÒ&÷&FW"×G&ç7&VçBFW‡BÕ²3cceÒ'ÖÐÐ¢àÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚—FV×2Ö6VçFW"vÓB#àÐ¢ÆF—`Ð¢6Æ74æÖS×¶G¶—46†V6¶VBò'FW‡BÕ²4dcd#Ò"¢'FW‡BÖ–æ†W&—B'ÖÐÐ¢àÐ¢Ä–6öâ6—¦S×³#ÒóàÐ¢ÂöF—càÐ¢Ç7â6Æ74æÖSÒ'FW‡B×6ÒföçBÖ&öÆBWW&66RG&6¶–ær×F–v‡B#àÐ¢¶—FVÒæÆ&VÇÐÐ¢Â÷7ãàÐ¢ÂöF—càÐ¢¶—46†V6¶VBò€Ð¢Ä6†V6´6—&6ÆS Ð¢6—¦S×³#ÐÐ¢6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò Ð¢óàÐ¢’¢€Ð¢Ä6—&6ÆR6—¦S×³#ÒóàÐ¢—ÐÐ¢Âö'WGFöãàÐ¢“°Ð¢Ò—ÐÐ¢ÂöF—càÐ¢ÂöF—càÐ Ð¢ÆF—b6Æ74æÖSÒ'ÓB&rÕ²3SSUÒ#àÐ¢Æ'WGFöàÐ¢F—6&ÆVC×¶6†V6¶VD—FV×2ç6—¦RÂ$ô$Eô4„T4´Ä•5BæÆVæwF‡ÐÐ¢öä6Æ–6³×²‚’Óâ°Ð¢–b†—5G&6¶–ær’°Ð¢6WE6†÷t&ö&D6†V6²†fÇ6R“°Ð¢ÒVÇ6R°Ð¢7F'EG&6¶–ær‚“°Ð¢ÐÐ¢×ÐÐ¢6Æ74æÖS×¶rÖgVÆÂ’Ób&÷VæFVBÕ³#G…ÒföçBÖ&Æ6²FW‡B×†ÂWW&66RG&6¶–ær×F–v‡FW"fÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"vÓ2G&ç6—F–öâÖÆÂG¶6†V6¶VD—FV×2ç6—¦RÓÓÒ$ô$Eô4„T4´Ä•5BæÆVæwF‚ò&&rÕ²4dcd#ÒFW‡BÖ&Æ6²6†F÷rÕ³óóC…÷&v&ƒ#SRÃrÃÃãR•Ò"¢&&rÕ²3##%ÒFW‡BÕ²3CCEÒ7W'6÷"Öæ÷BÖÆÆ÷vVB'ÖÐÐ¢àÐ¢¶—5G&6¶–ærò$6Æ÷6R6†V6²"¢$6öæf—&ÒbVævvR'ÐÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WE6†÷t&ö&D6†V6²†fÇ6R—ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂFW‡BÖ6VçFW"’ÓBFW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3CCEÒG&6¶–ær×v–FW7B Ð¢àÐ¢&÷'B6†V6°Ð¢Âö'WGFöãàÐ¢ÂöF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢6fR¦öæRÖöFÂ¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢·6†÷u6fU¦öæTÖöFÂbb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢×ÐÐ¢æ–ÖFS×·²÷6—G“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×r×6ÒÓ‚ Ð¢àÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#ä6öÖ×Væ—G’7÷GF–æsÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓ7†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ób—FÆ–2FW‡B×v†—FRWW&66R#àÐ¢7÷B6fR¦öæPÐ¢Âöƒ#àÐ¢Æ–çW@Ð¢WFôfö7W0Ð¢G—SÒ'FW‡B Ð¢Æ6V†öÆFW#Ò&RærâÂVGV&öâ&²Æö÷ Ð¢öä¶W”F÷vã×²†R’Óâ°Ð¢–b†Ræ¶W’ÓÓÒ$VçFW""Ð¢&W÷'E6fU¦öæR†Ræ7W'&VçEF&vWBçfÇVR“°Ð¢×ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Õ²4dcd#ÒG&ç6—F–öâÖ6öÆ÷'2Ö"Ób Ð¢óàÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚vÓ2#àÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WE6†÷u6fU¦öæTÖöFÂ†fÇ6R—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’ÓBFW‡BÕ³…ÒföçBÖ&Æ6²WW&66RFW‡BÕ²3CCEÒ Ð¢àÐ¢6æ6VÀÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²†R’Óâ°Ð¢6öç7B–çWBÒRæ7W'&VçEF&vWBç&VçDVÆVÖVç@Ð¢òç&Wf–÷W4VÆVÖVçE6–&Æ–ær2…DÔÄ–çWDVÆVÖVçC°Ð¢&W÷'E6fU¦öæR†–çWBçfÇVR“°Ð¢×ÐÐ¢6Æ74æÖSÒ&fÆW‚Õ³%Ò’ÓB&rÕ²4dcd#ÒFW‡BÖ&Æ6²&÷VæFVB×†ÂföçBÖ&Æ6²FW‡BÕ³…ÒWW&66R6†F÷rÕ³óó#…÷&v&ƒ#SRÃrÃÃãR•Ò Ð¢àÐ¢6öæf—&Ò7÷@Ð¢Âö'WGFöãàÐ¢ÂöF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢w&÷W&–FRÖöFÂ¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢·6†÷tw&÷W&–FTÖöFÂbb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢×ÐÐ¢æ–ÖFS×·²÷6—G“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×r×6ÒÓ‚ Ð¢àÐ¢Æf÷&Òöå7V&Ö—C×¶7&VFTw&÷W&–FWÓàÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#å7VBÖævVÖVçCÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓ7†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ób—FÆ–2FW‡B×v†—FRWW&66R#àÐ¢–æ—F–Æ—¦Rw&÷W Ð¢Âöƒ#àÐ¢Æ–çW@Ð¢WFôfö7W0Ð¢G—SÒ'FW‡B Ð¢fÇVS×·&–FUF—FÆWÐÐ¢öä6†ævS×²†R’Óâ6WE&–FUF—FÆR†RçF&vWBçfÇVR—ÐÐ¢Æ6V†öÆFW#Ò%&–FRF—FÆR†Rærâg&Væ6‚V'FW"fÇ’’ Ð¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Õ²4dcd#ÒG&ç6—F–öâÖ6öÆ÷'2Ö"Ób Ð¢óàÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚vÓ2#àÐ¢Æ'WGFöàÐ¢G—SÒ&'WGFöâ Ð¢öä6Æ–6³×²‚’Óâ6WE6†÷tw&÷W&–FTÖöFÂ†fÇ6R—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’ÓBFW‡BÕ³…ÒföçBÖ&Æ6²WW&66RFW‡BÕ²3CCEÒ Ð¢àÐ¢6æ6VÀÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢G—SÒ'7V&Ö—B Ð¢6Æ74æÖSÒ&fÆW‚Õ³%Ò’ÓB&rÕ²4dcd#ÒFW‡BÖ&Æ6²&÷VæFVB×†ÂföçBÖ&Æ6²FW‡BÕ³…ÒWW&66R6†F÷rÕ³óó#…÷&v&ƒ#SRÃrÃÃãR•Ò Ð¢àÐ¢76VÖ&ÆR7&WpÐ¢Âö'WGFöãàÐ¢ÂöF—càÐ¢Âöf÷&ÓàÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢W'&÷"÷fW&Æ’¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢¶W'&÷"bb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢Â“¢#×ÐÐ¢æ–ÖFS×·²÷6—G“¢Â“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB&÷GFöÒÓÆVgBÓó"×G&ç6ÆFR×‚Óó"¢ÓS‚Ób’ÓB&rÕ²4dc3335ÒFW‡B×v†—FR&÷VæFVBÓ'†ÂfÆW‚—FV×2Ö6VçFW"vÓ26†F÷rÓ'†Â Ð¢àÐ¢Å6†–VÆDÆW'B6—¦S×³#ÒóàÐ¢Ç6Æ74æÖSÒ'FW‡B×6ÒföçBÖ&Æ6²WW&66R#ç¶W'&÷'ÓÂ÷àÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WDW'&÷"†çVÆÂ—ÐÐ¢6Æ74æÖSÒ&ÖÂÓBFW‡BÕ³…ÒWW&66RföçBÖ&öÆB&rÖ&Æ6²ó#‚Ó"’Ó&÷VæFVB Ð¢àÐ¢F—6Ö—70Ð¢Âö'WGFöãàÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢Æfö÷FW"6Æ74æÖSÒ&×BÓ‚FW‡BÖ6VçFW"FW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3335ÒG&6¶–ærÕ³G…Ò†–FFVâÖC¦&Æö6²#àÐ¢G&6²F†R&–FRâ&÷FV7BF†R7&WrâòòU4³‚äôÄÐ¢Âöfö÷FW#àÐ¢ÂöF—càÐ Ð¢Ç7G–ÆSç¶ Ð¢¶W–g&ÖW2&÷Væ6R×7V'FÆR°Ð¢RÂR²G&ç6f÷&Ó¢G&ç6ÆFU’ƒ“²ÐÐ¢SR²G&ç6f÷&Ó¢G&ç6ÆFU’‚ÓG‚“²ÐÐ¢ÐÐ¢ææ–ÖFRÖ&÷Væ6R×7V'FÆR°Ð¢æ–ÖF–öã¢&÷Væ6R×7V'FÆR'2V6RÖ–âÖ÷WB–æf–æ—FS°Ð¢ÐÐ¢ÓÂ÷7G–ÆSàÐ¢ÂöF—càÐ¢“°Ð§ÐÐ 
+        const data = snapshot.docs.map(
+          (doc) => ({ id: doc.id, ...doc.data() }) as GearExchangeItem,
+        );
+        setGearItems(
+          data.sort(
+            (a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0),
+          ),
+        );
+      },
+      (err) => {
+        handleFirestoreError(err, OperationType.LIST, "gear_exchange");
+      },
+    );
+
+    return () => {
+      unsubscribePotholes();
+      unsubscribeFalls();
+      unsubscribeLive();
+      unsubscribeSafe();
+      unsubscribeRides();
+      unsubscribeStreak();
+      unsubscribeGear();
+    };
+  }, [currentUser]);
+
+  // --- Logic ---
+
+  const startTracking = () => {
+    if (checkedItems.size < BOARD_CHECKLIST.length) {
+      setShowBoardCheck(true);
+      return;
+    }
+
+    if (!navigator.geolocation) {
+      setError("Geolocation is not supported by your browser.");
+      return;
+    }
+
+    setIsTracking(true);
+    updatePresence("riding");
+    setShowBoardCheck(false);
+    setError(null);
+    setDistance(0);
+    setMaxSpeed(0);
+    setElapsedTime(0);
+    lastPositionRef.current = null;
+
+    timerRef.current = window.setInterval(() => {
+      setElapsedTime((prev) => prev + 1);
+    }, 1000);
+
+    watchIdRef.current = navigator.geolocation.watchPosition(
+      (position) => {
+        const { latitude, longitude, speed: geoSpeed } = position.coords;
+
+        if (geoSpeed !== null) {
+          const currentSpeed = Math.round(geoSpeed * 3.6 * 10) / 10;
+          setSpeed(currentSpeed);
+          setMaxSpeed((prev) => Math.max(prev, currentSpeed));
+        }
+
+        const hazardous = potholes.find((p) => {
+          const dist =
+            calculateDistance(latitude, longitude, p.latitude, p.longitude) *
+            1000;
+          return dist < 40;
+        });
+        setNearbyHazard(hazardous || null);
+
+        if (lastPositionRef.current) {
+          const d = calculateDistance(
+            lastPositionRef.current.lat,
+            lastPositionRef.current.lon,
+            latitude,
+            longitude,
+          );
+          if (d > 0.002) {
+            setDistance((prev) => prev + d);
+          }
+        }
+
+        lastPositionRef.current = { lat: latitude, lon: longitude };
+      },
+      (err) => {
+        console.error(err);
+        setError("Location access denied or unavailable.");
+        stopTracking();
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      },
+    );
+  };
+
+  const stopTracking = () => {
+    setIsTracking(false);
+    setSpeed(0);
+    setNearbyHazard(null);
+    disableFallDetection();
+    if (isLookingToSkate) {
+      updatePresence("ready");
+    } else {
+      removePresence();
+    }
+    if (watchIdRef.current !== null) {
+      navigator.geolocation.clearWatch(watchIdRef.current);
+      watchIdRef.current = null;
+    }
+    if (timerRef.current !== null) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    updateStreak();
+  };
+
+  const updateStreak = async () => {
+    if (!currentUser || distance < 0.1) return;
+
+    const today = new Date().toISOString().split("T")[0];
+    const streakRef = doc(db, "ride_streaks", currentUser.uid);
+
+    try {
+      const snap = await getDoc(streakRef);
+      if (snap.exists()) {
+        const data = snap.data() as RideStreak;
+        if (data.lastRideDate === today) {
+          await updateDoc(streakRef, {
+            totalRides: (data.totalRides || 0) + 1,
+          });
+        } else {
+          const lastDate = new Date(data.lastRideDate);
+          const lastDateUTC = Date.UTC(
+            lastDate.getUTCFullYear(),
+            lastDate.getUTCMonth(),
+            lastDate.getUTCDate(),
+          );
+          const currentParts = today.split("-").map(Number);
+          const currentDateUTC = Date.UTC(
+            currentParts[0],
+            currentParts[1] - 1,
+            currentParts[2],
+          );
+
+          const diffTime = currentDateUTC - lastDateUTC;
+          const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+          let newStreak = 1;
+          if (diffDays === 1) {
+            newStreak = (data.currentStreak || 0) + 1;
+          }
+
+          await updateDoc(streakRef, {
+            currentStreak: newStreak,
+            lastRideDate: today,
+            totalRides: (data.totalRides || 0) + 1,
+          });
+        }
+      } else {
+        await setDoc(streakRef, {
+          userId: currentUser.uid,
+          currentStreak: 1,
+          lastRideDate: today,
+          totalRides: 1,
+        });
+      }
+    } catch (err) {
+      console.error("Streak error:", err);
+    }
+  };
+
+  const addGearItem = async (
+    itemName: string,
+    itemType: GearExchangeItem["itemType"],
+  ) => {
+    if (!currentUser) return;
+    try {
+      await addDoc(collection(db, "gear_exchange"), {
+        ownerIâ€¦12423 tokens truncatedâ€¦setPrivateData({
+                            ...privateData,
+                            bloodType: e.target.value,
+                          })
+                        }
+                        className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-red-500 transition-colors"
+                      >
+                        <option value="">Select Type</option>
+                        {["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"].map(
+                          (t) => (
+                            <option key={t} value={t}>
+                              {t}
+                            </option>
+                          ),
+                        )}
+                      </select>
+                    </div>
+
+                    <div>
+                      <Label>Contact Name</Label>
+                      <input
+                        type="text"
+                        placeholder="WHO TO CALL"
+                        value={privateData.emergencyName || ""}
+                        onChange={(e) =>
+                          setPrivateData({
+                            ...privateData,
+                            emergencyName: e.target.value,
+                          })
+                        }
+                        className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-red-500 transition-colors placeholder:text-[#333]"
+                      />
+                    </div>
+
+                    <div>
+                      <Label>Contact Phone</Label>
+                      <input
+                        type="tel"
+                        placeholder="+1 (555) 000-0000"
+                        value={privateData.emergencyPhone || ""}
+                        onChange={(e) =>
+                          setPrivateData({
+                            ...privateData,
+                            emergencyPhone: e.target.value,
+                          })
+                        }
+                        className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-red-500 transition-colors placeholder:text-[#333]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setShowIceModal(false)}
+                      className="flex-1 py-4 rounded-2xl font-black text-sm uppercase tracking-widest bg-[#222] text-[#666]"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      className="flex-[2] py-4 rounded-2xl font-black text-sm uppercase tracking-widest bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.2)]"
+                    >
+                      Save Protocol
+                    </button>
+                  </div>
+                </form>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Gear Exchange Modal */}
+        <AnimatePresence>
+          {showGearModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                className="bg-[#111] border border-[#222] rounded-[32px] w-full max-w-2xl overflow-hidden"
+              >
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-8">
+                    <div>
+                      <Label className="text-blue-500">Community Support</Label>
+                      <h2 className="text-4xl font-black tracking-tighter italic uppercase">
+                        Gear // Hub
+                      </h2>
+                    </div>
+                    <button
+                      onClick={() => setShowGearModal(false)}
+                      className="text-[#444] hover:text-white transition-colors"
+                    >
+                      <Square size={24} className="rotate-45" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    {/* Add Item Form */}
+                    <div>
+                      <Label>Lend Equipment</Label>
+                      <div className="space-y-4">
+                        <input
+                          type="text"
+                          placeholder="ITEM NAME (e.g. Helmet, T-Tool)"
+                          value={gearItemName}
+                          onChange={(e) => setGearItemName(e.target.value)}
+                          className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-blue-500 transition-colors placeholder:text-[#333]"
+                        />
+                        <select
+                          value={gearItemType}
+                          onChange={(e) =>
+                            setGearItemType(
+                              e.target.value as GearExchangeItem["itemType"],
+                            )
+                          }
+                          className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-blue-500 transition-colors"
+                        >
+                          <option value="board">Board</option>
+                          <option value="helmet">Helmet</option>
+                          <option value="pad">Pads</option>
+                          <option value="tool">Tool</option>
+                          <option value="other">Other</option>
+                        </select>
+                        <button
+                          onClick={() => {
+                            if (gearItemName.trim()) {
+                              addGearItem(gearItemName, gearItemType);
+                              setGearItemName("");
+                            }
+                          }}
+                          className="w-full py-4 bg-blue-600 text-white rounded-xl font-black uppercase tracking-tighter hover:bg-blue-500 transition-colors"
+                        >
+                          List Gear Item
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Gear List */}
+                    <div className="flex flex-col">
+                      <Label>Active Listings</Label>
+                      <div className="flex-1 overflow-y-auto max-h-[300px] space-y-3 pr-2 custom-scrollbar">
+                        {gearItems.length > 0 ? (
+                          gearItems.map((item) => (
+                            <div
+                              key={item.id}
+                              className="bg-[#151515] border border-[#222] p-4 rounded-2xl flex flex-col justify-between gap-4"
+                            >
+                              <div className="flex justify-between items-start">
+                                <div>
+                                  <div className="text-xs font-black uppercase text-white">
+                                    {item.itemName}
+                                  </div>
+                                  <div className="text-[10px] font-bold uppercase text-[#555]">
+                                    {item.ownerName} Ã¢â‚¬Â¢ {item.itemType}
+                                  </div>
+                                </div>
+                                <span
+                                  className={`text-[8px] font-black uppercase p-1 px-2 rounded-lg ${item.status === "available" ? "bg-green-500/20 text-green-500" : "bg-red-500/20 text-red-500"}`}
+                                >
+                                  {item.status}
+                                </span>
+                              </div>
+
+                              <div className="flex gap-2">
+                                {item.status === "available" ? (
+                                  <button
+                                    onClick={() => borrowGear(item.id!)}
+                                    className="flex-1 py-2 bg-[#222] hover:bg-blue-600 transition-all rounded-lg text-[9px] font-black uppercase"
+                                  >
+                                    Borrow
+                                  </button>
+                                ) : (
+                                  (item.borrowerId === currentUser?.uid ||
+                                    item.ownerId === currentUser?.uid) && (
+                                    <button
+                                      onClick={() => returnGear(item.id!)}
+                                      className="flex-1 py-2 bg-[#222] hover:bg-green-600 transition-all rounded-lg text-[9px] font-black uppercase"
+                                    >
+                                      Mark as Returned
+                                    </button>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="text-center py-10 text-[#444] text-[10px] font-black uppercase tracking-widest italic">
+                            No gear in the exchange yet.
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Board-Check Overlay */}
+        <AnimatePresence>
+          {showBoardCheck && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                className="bg-[#111] border border-[#222] rounded-[32px] w-full max-w-md overflow-hidden relative"
+              >
+                <div className="p-8 pb-4">
+                  <Label className="text-[#FF6B00]">Safety Protocol</Label>
+                  <h2 className="text-4xl font-black tracking-tighter mb-2 italic">
+                    BOARD-CHECK //
+                  </h2>
+                  <p className="text-[10px] uppercase font-bold text-[#666] tracking-[2px] mb-8">
+                    Verification required to engage motors
+                  </p>
+
+                  <div className="space-y-3 mb-10">
+                    {BOARD_CHECKLIST.map((item) => {
+                      const Icon = item.icon;
+                      const isChecked = checkedItems.has(item.id);
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => toggleChecklistItem(item.id)}
+                          className={`w-full p-5 rounded-2xl flex items-center justify-between transition-all border ${isChecked ? "bg-[#FF6B00]/5 border-[#FF6B00]/20 text-white" : "bg-[#151515] border-transparent text-[#666]"}`}
+                        >
+                          <div className="flex items-center gap-4">
+                            <div
+                              className={`${isChecked ? "text-[#FF6B00]" : "text-inherit"}`}
+                            >
+                              <Icon size={20} />
+                            </div>
+                            <span className="text-sm font-bold uppercase tracking-tight">
+                              {item.label}
+                            </span>
+                          </div>
+                          {isChecked ? (
+                            <CheckCircle2
+                              size={20}
+                              className="text-[#FF6B00]"
+                            />
+                          ) : (
+                            <Circle size={20} />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="p-4 bg-[#151515]">
+                  <button
+                    disabled={checkedItems.size < BOARD_CHECKLIST.length}
+                    onClick={() => {
+                      if (isTracking) {
+                        setShowBoardCheck(false);
+                      } else {
+                        startTracking();
+                      }
+                    }}
+                    className={`w-full py-6 rounded-[24px] font-black text-xl uppercase tracking-tighter flex items-center justify-center gap-3 transition-all ${checkedItems.size === BOARD_CHECKLIST.length ? "bg-[#FF6B00] text-black shadow-[0_0_40px_rgba(255,107,0,0.15)]" : "bg-[#222] text-[#444] cursor-not-allowed"}`}
+                  >
+                    {isTracking ? "Close Check" : "Confirm & Engage"}
+                  </button>
+                  <button
+                    onClick={() => setShowBoardCheck(false)}
+                    className="w-full text-center py-4 text-[10px] uppercase font-bold text-[#444] tracking-widest"
+                  >
+                    Abort Check
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Safe Zone Modal */}
+        <AnimatePresence>
+          {showSafeZoneModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                className="bg-[#111] border border-[#222] rounded-[32px] w-full max-w-sm p-8"
+              >
+                <Label className="text-[#FF6B00]">Community Spotting</Label>
+                <h2 className="text-3xl font-black tracking-tighter mb-6 italic text-white uppercase">
+                  Spot A Safe Zone
+                </h2>
+                <input
+                  autoFocus
+                  type="text"
+                  placeholder="e.g., Audubon Park Loop"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter")
+                      reportSafeZone(e.currentTarget.value);
+                  }}
+                  className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-[#FF6B00] transition-colors mb-6"
+                />
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowSafeZoneModal(false)}
+                    className="flex-1 py-4 text-[10px] font-black uppercase text-[#444]"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      const input = e.currentTarget.parentElement
+                        ?.previousElementSibling as HTMLInputElement;
+                      reportSafeZone(input.value);
+                    }}
+                    className="flex-[2] py-4 bg-[#FF6B00] text-black rounded-xl font-black text-[10px] uppercase shadow-[0_0_20px_rgba(255,107,0,0.15)]"
+                  >
+                    Confirm Spot
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Group Ride Modal */}
+        <AnimatePresence>
+          {showGroupRideModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                className="bg-[#111] border border-[#222] rounded-[32px] w-full max-w-sm p-8"
+              >
+                <form onSubmit={createGroupRide}>
+                  <Label className="text-[#FF6B00]">Squad Management</Label>
+                  <h2 className="text-3xl font-black tracking-tighter mb-6 italic text-white uppercase">
+                    Initialize Group
+                  </h2>
+                  <input
+                    autoFocus
+                    type="text"
+                    value={rideTitle}
+                    onChange={(e) => setRideTitle(e.target.value)}
+                    placeholder="Ride Title (e.g. French Quarter Fly)"
+                    className="w-full bg-[#151515] border border-[#333] rounded-xl p-4 text-white font-bold uppercase outline-none focus:border-[#FF6B00] transition-colors mb-6"
+                  />
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setShowGroupRideModal(false)}
+                      className="flex-1 py-4 text-[10px] font-black uppercase text-[#444]"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      className="flex-[2] py-4 bg-[#FF6B00] text-black rounded-xl font-black text-[10px] uppercase shadow-[0_0_20px_rgba(255,107,0,0.15)]"
+                    >
+                      Assemble Crew
+                    </button>
+                  </div>
+                </form>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Error Overlay */}
+        <AnimatePresence>
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 px-6 py-4 bg-[#FF3333] text-white rounded-2xl flex items-center gap-3 shadow-2xl"
+            >
+              <ShieldAlert size={20} />
+              <p className="text-sm font-black uppercase">{error}</p>
+              <button
+                onClick={() => setError(null)}
+                className="ml-4 text-[10px] uppercase font-bold bg-black/20 px-2 py-1 rounded"
+              >
+                Dismiss
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <footer className="mt-8 text-center text-[10px] uppercase font-bold text-[#333] tracking-[4px] hidden md:block">
+          Track the ride. Protect the crew. // ESK8 NOLA
+        </footer>
+      </div>
+
+      <style>{`
+        @keyframes bounce-subtle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+        .animate-bounce-subtle {
+          animation: bounce-subtle 2s ease-in-out infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+
