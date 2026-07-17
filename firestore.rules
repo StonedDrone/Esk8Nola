@@ -1,0 +1,165 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: potholes
+    // Document ID: auto-generated
+    // Fields:
+    //   - latitude: number (required)
+    //   - longitude: number (required)
+    //   - reporterId: string (required)
+    //   - reportedAt: timestamp (required)
+    //   - severity: string (optional, enum: low, medium, high)
+    //
+    // Collection: fall_alerts
+    // Document ID: auto-generated
+    // Fields:
+    //   - userId: string (required)
+    //   - userName: string (optional)
+    //   - latitude: number (required)
+    //   - longitude: number (required)
+    //   - timestamp: timestamp (required)
+    //   - resolved: boolean (optional)
+    //
+    // ===============================================================
+    // Document ID: userId
+    // Fields:
+    //   - bloodType: string (optional, enum: A+, A-, B+, B-, AB+, AB-, O+, O-)
+    //   - emergencyName: string (optional)
+    //   - emergencyPhone: string (optional)
+    //
+    // Collection: live_riders
+    // Document ID: userId
+    // Fields:
+    //   - userId: string (required)
+    //   - userName: string (optional)
+    //   - userPhoto: string (optional)
+    //   - status: string (required, enum: ready, riding)
+    //   - lastSeen: timestamp (required)
+    //
+    // Collection: safe_zones
+    // Document ID: auto-generated
+    // Fields:
+    //   - latitude: number (required)
+    //   - longitude: number (required)
+    //   - title: string (required)
+    //   - reporterId: string (required)
+    //   - createdAt: timestamp (required)
+    //
+    // Collection: group_rides
+    // Document ID: auto-generated
+    // Fields:
+    //   - creatorId: string (required)
+    //   - title: string (required)
+    //   - active: boolean (required)
+    //   - members: map (required)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+       return request.auth != null;
+    }
+
+    function isOwner(userId) {
+       return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.email == "jaymiller0202@gmail.com" && request.auth.token.email_verified == true);
+    }
+
+    function isValidPothole(data) {
+      return data.latitude is number && 
+             data.longitude is number &&
+             data.reporterId is string &&
+             data.reportedAt is timestamp &&
+             (!('severity' in data) || data.severity in ['low', 'medium', 'high']);
+    }
+
+    function isValidPrivateData(data) {
+      return (!('bloodType' in data) || data.bloodType in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']) &&
+             (!('emergencyName' in data) || (data.emergencyName is string && data.emergencyName.size() < 100)) &&
+             (!('emergencyPhone' in data) || (data.emergencyPhone is string && data.emergencyPhone.size() < 20));
+    }
+
+    function isValidFallAlert(data) {
+      return data.userId is string &&
+             data.latitude is number &&
+             data.longitude is number &&
+             data.timestamp is timestamp &&
+             (!('resolved' in data) || data.resolved is bool);
+    }
+
+    function isValidLiveRider(data) {
+      return data.userId is string &&
+             data.status in ['ready', 'riding'] &&
+             data.lastSeen is timestamp;
+    }
+
+    function isValidSafeZone(data) {
+      return data.latitude is number && 
+             data.longitude is number &&
+             data.title is string &&
+             data.reporterId is string;
+    }
+
+    function isValidGroupRide(data) {
+      return data.creatorId is string &&
+             data.title is string &&
+             data.active is bool &&
+             data.members is map;
+    }
+
+    function isValidUserPublic(data) {
+      return data.userId is string &&
+             data.userName is string &&
+             (!('pacePreference' in data) || data.pacePreference in ['cruising', 'balanced', 'speed']) &&
+             (!('skateStyle' in data) || data.skateStyle in ['street', 'long-distance', 'freestyle']);
+    }
+
+    function isValidChatMessage(data) {
+      return data.channelId is string &&
+             data.senderId is string &&
+             data.text is string &&
+             data.text.size() < 1000 &&
+             data.timestamp is timestamp;
+    }
+
+    function isValidRideRecap(data) {
+      return data.creatorId is string &&
+             data.distance is number &&
+             data.timestamp is timestamp;
+    }
+
+    function isValidRideStreak(data) {
+      return data.userId is string &&
+             data.currentStreak is number &&
+             (!('totalRides' in data) || data.totalRides is number);
+    }
+
+    function isValidGearItem(data) {
+      return data.ownerId is string &&
+             data.itemName is string && data.itemName.size() > 0 &&
+             data.itemType in ['board', 'helmet', 'pad', 'tool', 'other'] &&
+             data.status in ['available', 'lent', 'unavailable'];
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /potholes/{potholeId} {
+      // Anyone authenticated can read potholes (needed for warnings)
+      allow read: if isAuthenticated();
+      
+      // Anyone authenticated can create a pothole report
+      allow create: if isAuthenticated() && 
+                ;ó¯<¶‰žËkºwµçbW†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×rÖÖB÷fW&fÆ÷rÖ†–FFVâ&VÆF—fR Ð¢àÐ¢ÆF—b6Æ74æÖSÒ'Ó‚"ÓB#àÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#å6fWG’&÷Fö6öÃÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓG†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ó"—FÆ–2#àÐ¢$ô$BÔ4„T4²òðÐ¢Âöƒ#àÐ¢Ç6Æ74æÖSÒ'FW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3cceÒG&6¶–ærÕ³'…ÒÖ"Ó‚#àÐ¢fW&–f–6F–öâ&WV—&VBFòVævvRÖ÷F÷'0Ð¢Â÷àÐ Ð¢ÆF—b6Æ74æÖSÒ'76R×’Ó2Ö"Ó#àÐ¢´$ô$Eô4„T4´Ä•5BæÖ‚†—FVÒ’Óâ°Ð¢6öç7B–6öâÒ—FVÒæ–6öã°Ð¢6öç7B—46†V6¶VBÒ6†V6¶VD—FV×2æ†2†—FVÒæ–B“°Ð¢&WGW&â€Ð¢Æ'WGFöàÐ¢¶W“×¶—FVÒæ–GÐÐ¢öä6Æ–6³×²‚’ÓâFövvÆT6†V6¶Æ—7D—FVÒ†—FVÒæ–B—ÐÐ¢6Æ74æÖS×¶rÖgVÆÂÓR&÷VæFVBÓ'†ÂfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö&WGvVVâG&ç6—F–öâÖÆÂ&÷&FW"G¶—46†V6¶VBò&&rÕ²4dcd#ÒóR&÷&FW"Õ²4dcd#Òó#FW‡B×v†—FR"¢&&rÕ²3SSUÒ&÷&FW"×G&ç7&VçBFW‡BÕ²3cceÒ'ÖÐÐ¢àÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚—FV×2Ö6VçFW"vÓB#àÐ¢ÆF—`Ð¢6Æ74æÖS×¶G¶—46†V6¶VBò'FW‡BÕ²4dcd#Ò"¢'FW‡BÖ–æ†W&—B'ÖÐÐ¢àÐ¢Ä–6öâ6—¦S×³#ÒóàÐ¢ÂöF—càÐ¢Ç7â6Æ74æÖSÒ'FW‡B×6ÒföçBÖ&öÆBWW&66RG&6¶–ær×F–v‡B#àÐ¢¶—FVÒæÆ&VÇÐÐ¢Â÷7ãàÐ¢ÂöF—càÐ¢¶—46†V6¶VBò€Ð¢Ä6†V6´6—&6ÆS Ð¢6—¦S×³#ÐÐ¢6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò Ð¢óàÐ¢’¢€Ð¢Ä6—&6ÆR6—¦S×³#ÒóàÐ¢—ÐÐ¢Âö'WGFöãàÐ¢“°Ð¢Ò—ÐÐ¢ÂöF—càÐ¢ÂöF—càÐ Ð¢ÆF—b6Æ74æÖSÒ'ÓB&rÕ²3SSUÒ#àÐ¢Æ'WGFöàÐ¢F—6&ÆVC×¶6†V6¶VD—FV×2ç6—¦RÂ$ô$Eô4„T4´Ä•5BæÆVæwF‡ÐÐ¢öä6Æ–6³×²‚’Óâ°Ð¢–b†—5G&6¶–ær’°Ð¢6WE6†÷t&ö&D6†V6²†fÇ6R“°Ð¢ÒVÇ6R°Ð¢7F'EG&6¶–ær‚“°Ð¢ÐÐ¢×ÐÐ¢6Æ74æÖS×¶rÖgVÆÂ’Ób&÷VæFVBÕ³#G…ÒföçBÖ&Æ6²FW‡B×†ÂWW&66RG&6¶–ær×F–v‡FW"fÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"vÓ2G&ç6—F–öâÖÆÂG¶6†V6¶VD—FV×2ç6—¦RÓÓÒ$ô$Eô4„T4´Ä•5BæÆVæwF‚ò&&rÕ²4dcd#ÒFW‡BÖ&Æ6²6†F÷rÕ³óóC…÷&v&ƒ#SRÃrÃÃãR•Ò"¢&&rÕ²3##%ÒFW‡BÕ²3CCEÒ7W'6÷"Öæ÷BÖÆÆ÷vVB'ÖÐÐ¢àÐ¢¶—5G&6¶–ærò$6Æ÷6R6†V6²"¢$6öæf—&ÒbVævvR'ÐÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WE6†÷t&ö&D6†V6²†fÇ6R—ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂFW‡BÖ6VçFW"’ÓBFW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3CCEÒG&6¶–ær×v–FW7B Ð¢àÐ¢&÷'B6†V6°Ð¢Âö'WGFöãàÐ¢ÂöF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢6fR¦öæRÖöFÂ¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢·6†÷u6fU¦öæTÖöFÂbb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢×ÐÐ¢æ–ÖFS×·²÷6—G“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×r×6ÒÓ‚ Ð¢àÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#ä6öÖ×Væ—G’7÷GF–æsÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓ7†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ób—FÆ–2FW‡B×v†—FRWW&66R#àÐ¢7÷B6fR¦öæPÐ¢Âöƒ#àÐ¢Æ–çW@Ð¢WFôfö7W0Ð¢G—SÒ'FW‡B Ð¢Æ6V†öÆFW#Ò&RærâÂVGV&öâ&²Æö÷ Ð¢öä¶W”F÷vã×²†R’Óâ°Ð¢–b†Ræ¶W’ÓÓÒ$VçFW""Ð¢&W÷'E6fU¦öæR†Ræ7W'&VçEF&vWBçfÇVR“°Ð¢×ÐÐ¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Õ²4dcd#ÒG&ç6—F–öâÖ6öÆ÷'2Ö"Ób Ð¢óàÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚vÓ2#àÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WE6†÷u6fU¦öæTÖöFÂ†fÇ6R—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’ÓBFW‡BÕ³…ÒföçBÖ&Æ6²WW&66RFW‡BÕ²3CCEÒ Ð¢àÐ¢6æ6VÀÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²†R’Óâ°Ð¢6öç7B–çWBÒRæ7W'&VçEF&vWBç&VçDVÆVÖVç@Ð¢òç&Wf–÷W4VÆVÖVçE6–&Æ–ær2…DÔÄ–çWDVÆVÖVçC°Ð¢&W÷'E6fU¦öæR†–çWBçfÇVR“°Ð¢×ÐÐ¢6Æ74æÖSÒ&fÆW‚Õ³%Ò’ÓB&rÕ²4dcd#ÒFW‡BÖ&Æ6²&÷VæFVB×†ÂföçBÖ&Æ6²FW‡BÕ³…ÒWW&66R6†F÷rÕ³óó#…÷&v&ƒ#SRÃrÃÃãR•Ò Ð¢àÐ¢6öæf—&Ò7÷@Ð¢Âö'WGFöãàÐ¢ÂöF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢w&÷W&–FRÖöFÂ¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢·6†÷tw&÷W&–FTÖöFÂbb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢×ÐÐ¢æ–ÖFS×·²÷6—G“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB–ç6WBÓ¢ÓS&rÖ&Æ6²ó“R&6¶G&÷Ö&ÇW"×6ÒfÆW‚—FV×2Ö6VçFW"§W7F–g’Ö6VçFW"Ób Ð¢àÐ¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²66ÆS¢ã’Â“¢#×ÐÐ¢æ–ÖFS×·²66ÆS¢Â“¢×ÐÐ¢6Æ74æÖSÒ&&rÕ²3Ò&÷&FW"&÷&FW"Õ²3##%Ò&÷VæFVBÕ³3'…ÒrÖgVÆÂÖ‚×r×6ÒÓ‚ Ð¢àÐ¢Æf÷&Òöå7V&Ö—C×¶7&VFTw&÷W&–FWÓàÐ¢ÄÆ&VÂ6Æ74æÖSÒ'FW‡BÕ²4dcd#Ò#å7VBÖævVÖVçCÂôÆ&VÃàÐ¢Æƒ"6Æ74æÖSÒ'FW‡BÓ7†ÂföçBÖ&Æ6²G&6¶–ær×F–v‡FW"Ö"Ób—FÆ–2FW‡B×v†—FRWW&66R#àÐ¢–æ—F–Æ—¦Rw&÷W Ð¢Âöƒ#àÐ¢Æ–çW@Ð¢WFôfö7W0Ð¢G—SÒ'FW‡B Ð¢fÇVS×·&–FUF—FÆWÐÐ¢öä6†ævS×²†R’Óâ6WE&–FUF—FÆR†RçF&vWBçfÇVR—ÐÐ¢Æ6V†öÆFW#Ò%&–FRF—FÆR†Rærâg&Væ6‚V'FW"fÇ’’ Ð¢6Æ74æÖSÒ'rÖgVÆÂ&rÕ²3SSUÒ&÷&FW"&÷&FW"Õ²3335Ò&÷VæFVB×†ÂÓBFW‡B×v†—FRföçBÖ&öÆBWW&66R÷WFÆ–æRÖæöæRfö7W3¦&÷&FW"Õ²4dcd#ÒG&ç6—F–öâÖ6öÆ÷'2Ö"Ób Ð¢óàÐ¢ÆF—b6Æ74æÖSÒ&fÆW‚vÓ2#àÐ¢Æ'WGFöàÐ¢G—SÒ&'WGFöâ Ð¢öä6Æ–6³×²‚’Óâ6WE6†÷tw&÷W&–FTÖöFÂ†fÇ6R—ÐÐ¢6Æ74æÖSÒ&fÆW‚Ó’ÓBFW‡BÕ³…ÒföçBÖ&Æ6²WW&66RFW‡BÕ²3CCEÒ Ð¢àÐ¢6æ6VÀÐ¢Âö'WGFöãàÐ¢Æ'WGFöàÐ¢G—SÒ'7V&Ö—B Ð¢6Æ74æÖSÒ&fÆW‚Õ³%Ò’ÓB&rÕ²4dcd#ÒFW‡BÖ&Æ6²&÷VæFVB×†ÂföçBÖ&Æ6²FW‡BÕ³…ÒWW&66R6†F÷rÕ³óó#…÷&v&ƒ#SRÃrÃÃãR•Ò Ð¢àÐ¢76VÖ&ÆR7&WpÐ¢Âö'WGFöãàÐ¢ÂöF—càÐ¢Âöf÷&ÓàÐ¢ÂöÖ÷F–öâæF—càÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢²ò¢W'&÷"÷fW&Æ’¢÷ÐÐ¢Äæ–ÖFU&W6Væ6SàÐ¢¶W'&÷"bb€Ð¢ÆÖ÷F–öâæF—`Ð¢–æ—F–Ã×·²÷6—G“¢Â“¢#×ÐÐ¢æ–ÖFS×·²÷6—G“¢Â“¢×ÐÐ¢W†—C×·²÷6—G“¢×ÐÐ¢6Æ74æÖSÒ&f—†VB&÷GFöÒÓÆVgBÓó"×G&ç6ÆFR×‚Óó"¢ÓS‚Ób’ÓB&rÕ²4dc3335ÒFW‡B×v†—FR&÷VæFVBÓ'†ÂfÆW‚—FV×2Ö6VçFW"vÓ26†F÷rÓ'†Â Ð¢àÐ¢Å6†–VÆDÆW'B6—¦S×³#ÒóàÐ¢Ç6Æ74æÖSÒ'FW‡B×6ÒföçBÖ&Æ6²WW&66R#ç¶W'&÷'ÓÂ÷àÐ¢Æ'WGFöàÐ¢öä6Æ–6³×²‚’Óâ6WDW'&÷"†çVÆÂ—ÐÐ¢6Æ74æÖSÒ&ÖÂÓBFW‡BÕ³…ÒWW&66RföçBÖ&öÆB&rÖ&Æ6²ó#‚Ó"’Ó&÷VæFVB Ð¢àÐ¢F—6Ö—70Ð¢Âö'WGFöãàÐ¢ÂöÖ÷F–öâæF—càÐ¢—ÐÐ¢Âôæ–ÖFU&W6Væ6SàÐ Ð¢Æfö÷FW"6Æ74æÖSÒ&×BÓ‚FW‡BÖ6VçFW"FW‡BÕ³…ÒWW&66RföçBÖ&öÆBFW‡BÕ²3335ÒG&6¶–ærÕ³G…Ò†–FFVâÖC¦&Æö6²#àÐ¢G&6²F†R&–FRâ&÷FV7BF†R7&WrâòòU4³‚äôÄÐ¢Âöfö÷FW#àÐ¢ÂöF—càÐ Ð¢Ç7G–ÆSç¶ Ð¢¶W–g&ÖW2&÷Væ6R×7V'FÆR°Ð¢RÂR²G&ç6f÷&Ó¢G&ç6ÆFU’ƒ“²ÐÐ¢SR²G&ç6f÷&Ó¢G&ç6ÆFU’‚ÓG‚“²ÐÐ¢ÐÐ¢ææ–ÖFRÖ&÷Væ6R×7V'FÆR°Ð¢æ–ÖF–öã¢&÷Væ6R×7V'FÆR'2V6RÖ–âÖ÷WB–æf–æ—FS°Ð¢ÐÐ¢ÓÂ÷7G–ÆSàÐ¢ÂöF—càÐ¢“°Ð§ÐÐ 

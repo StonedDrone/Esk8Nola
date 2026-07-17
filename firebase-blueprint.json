@@ -1,0 +1,202 @@
+{
+  "entities": {
+    "Pothole": {
+      "title": "Pothole Hazard",
+      "description": "A reported street hazard in New Orleans.",
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "number", "description": "The latitudinal coordinate of the hazard." },
+        "longitude": { "type": "number", "description": "The longitudinal coordinate of the hazard." },
+        "reporterId": { "type": "string", "description": "The UID of the user who reported it." },
+        "reportedAt": { "type": "string", "format": "date-time", "description": "Timestamp when the pothole was reported." },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"], "description": "Visual severity of the pothole." }
+      },
+      "required": ["latitude", "longitude", "reportedAt", "reporterId"]
+    },
+    "UserPrivate": {
+      "title": "Private User Data",
+      "description": "Sensitive user information for emergency purposes.",
+      "type": "object",
+      "properties": {
+        "bloodType": { "type": "string", "enum": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"], "description": "User's blood type." },
+        "emergencyName": { "type": "string", "description": "Name of the emergency contact." },
+        "emergencyPhone": { "type": "string", "description": "Phone number of the emergency contact." }
+      },
+      "required": []
+    },
+    "FallAlert": {
+      "title": "Fall Detection Alert",
+      "description": "An emergency signal sent when a rider impact is detected.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the rider who fell." },
+        "userName": { "type": "string", "description": "Name of the rider." },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "resolved": { "type": "boolean", "description": "Whether the rider is okay now." }
+      },
+      "required": ["userId", "latitude", "longitude", "timestamp"]
+    },
+    "LiveRider": {
+      "title": "Live Rider Presence",
+      "description": "Signals a user's readiness to skate.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userPhoto": { "type": "string" },
+        "status": { "type": "string", "enum": ["ready", "riding"], "description": "Current skate status." },
+        "lastSeen": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "status", "lastSeen"]
+    },
+    "SafeZone": {
+      "title": "Ok to SK8 Zone",
+      "description": "A community-vetted area safe for skating.",
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "title": { "type": "string" },
+        "reporterId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["latitude", "longitude", "title"]
+    },
+    "GroupRide": {
+      "title": "Group Ride Session",
+      "description": "A collaborative session for multiple riders.",
+      "type": "object",
+      "properties": {
+        "creatorId": { "type": "string" },
+        "creatorName": { "type": "string" },
+        "title": { "type": "string" },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "members": { "type": "object", "description": "Map of userId to { status: 'out' | 'safe', timestamp: Date }" },
+        "rideStyle": { "type": "string", "enum": ["cruising", "fast", "chill"], "description": "The expected pace of the ride." }
+      },
+      "required": ["creatorId", "title", "active"]
+    },
+    "UserPublic": {
+      "title": "Public Profile",
+      "description": "Non-sensitive rider profile information.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userPhoto": { "type": "string" },
+        "pacePreference": { "type": "string", "enum": ["cruising", "balanced", "speed"] },
+        "skateStyle": { "type": "string", "enum": ["street", "long-distance", "freestyle"] },
+        "boardType": { "type": "string" },
+        "kudosCount": { "type": "number" }
+      },
+      "required": ["userId", "userName"]
+    },
+    "ChatMessage": {
+      "title": "Chat Message",
+      "description": "Real-time message within a ride channel or global lobby.",
+      "type": "object",
+      "properties": {
+        "channelId": { "type": "string", "description": "Ride ID or 'global'" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderPhoto": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["channelId", "senderId", "text", "timestamp"]
+    },
+    "RideRecap": {
+      "title": "Ride Recap",
+      "description": "Post-ride summary shared with the community.",
+      "type": "object",
+      "properties": {
+        "creatorId": { "type": "string" },
+        "creatorName": { "type": "string" },
+        "distance": { "type": "number" },
+        "maxSpeed": { "type": "number" },
+        "duration": { "type": "number" },
+        "participantIds": { "type": "array", "items": { "type": "string" } },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "kudos": { "type": "number" }
+      },
+      "required": ["creatorId", "distance", "timestamp"]
+    },
+    "RideStreak": {
+      "title": "Rider Session Streak",
+      "description": "Tracks consecutive days of skating for retention.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "currentStreak": { "type": "number" },
+        "lastRideDate": { "type": "string", "format": "date" },
+        "totalRides": { "type": "number" }
+      },
+      "required": ["userId", "currentStreak"]
+    },
+    "GearExchangeItem": {
+      "title": "Community Gear Exchange",
+      "description": "Shared log for lending and borrowing skating gear.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "itemName": { "type": "string" },
+        "itemType": { "type": "string", "enum": ["board", "helmet", "pad", "tool", "other"] },
+        "status": { "type": "string", "enum": ["available", "lent", "unavailable"] },
+        "borrowerId": { "type": "string" },
+        "borrowerName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerId", "itemName", "itemType", "status"]
+    }
+  },
+  "firestore": {
+    "/potholes/{potholeId}": {
+      "schema": "Pothole",
+      "description": "Shared community pothole hazards."
+    },
+    "/users_public/{userId}": {
+      "schema": "UserPublic",
+      "description": "Public rider profiles for matching."
+    },
+    "/users_private/{userId}": {
+      "schema": "UserPrivate",
+      "description": "Private emergency info, only visible to the owner."
+    },
+    "/fall_alerts/{alertId}": {
+      "schema": "FallAlert",
+      "description": "Real-time emergency signals for fallen riders."
+    },
+    "/live_riders/{userId}": {
+      "schema": "LiveRider",
+      "description": "Real-time presence of riders looking for a group."
+    },
+    "/safe_zones/{zoneId}": {
+      "schema": "SafeZone",
+      "description": "Safe skating areas."
+    },
+    "/group_rides/{rideId}": {
+      "schema": "GroupRide",
+      "description": "Sessions for tracking group safety."
+    },
+    "/chat_messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Real-time chat messages."
+    },
+    "/ride_recaps/{recapId}": {
+      "schema": "RideRecap",
+      "description": "Post-ride summaries for community kudos."
+    },
+    "/ride_streaks/{userId}": {
+      "schema": "RideStreak",
+      "description": "User skating streaks."
+    },
+    "/gear_exchange/{itemId}": {
+      "schema": "GearExchangeItem",
+      "description": "Community gear sharing log."
+    }
+  }
+}

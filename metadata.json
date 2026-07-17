@@ -1,0 +1,6 @@
+{
+  "name": "Esk8 NOLA Ride Companion",
+  "description": "Mobile ride tracking, safety, community tools, and direct access to the Esk8 Or Walk game.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["gps ride tracking", "community safety", "group rides", "progressive web app"]
+}

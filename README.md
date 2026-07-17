@@ -28,4 +28,3 @@ Requirements: Node.js 20 or newer and a Firebase project.
 Google sign-in must be enabled in Firebase Authentication. Add every production hostname to Firebase Authentication's authorized domains. GPS and motion sensors require HTTPS on phones. Emergency and fall-alert features are community aids, not substitutes for emergency services.
 
 No private API key is bundled into the browser app. Firebase web configuration identifies the project but security is enforced by Authentication and Firestore rules.
-
